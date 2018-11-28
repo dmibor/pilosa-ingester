@@ -8,7 +8,7 @@ Helps to avoid hot nodes when mapping string data to sequential Pilosa column id
 Data can be ingested by the cluster of Ingester nodes - each node would own particular set of shards and mappings of these shards. Field mappings would be stored in common DB.
 - Some additional caching to improve Ingester node throughput limited by local storage latency.
 Our experience shows that time to query local storage is a real bottleneck when pushing for high upload throughput for data that is hard to just hash to Pilosa internal ID and has a lot of duplicate set bit operations for same Pilosa column ID.
-- Ability to continue stopped or crashed ingestion from where it was left off. 
+- Ability to continue stopped or crashed ingestion from where it was left off, preserving already loaded data and mappings of it's IDs. 
 
 ## To start:
 ```shell 
